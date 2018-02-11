@@ -24,7 +24,7 @@ public class Main {
 
             tcx.getDatabase()
                 .getAuthor()
-                .setName("KONKER");
+                .setName("TinyTcx is the author!");
 
             tcx.save(new FileOutputStream(new File("foo.tcx")));
 
@@ -37,7 +37,7 @@ public class Main {
             System.out.println("Activities: " + tcx.getNumActivities());
             System.out.println("Laps: " + tcx.getNumLapsInActivity(0));
             System.out.println("Tracks: " + tcx.getNumtracksInLap(0, 0));
-            System.out.println("Trackpoints: " + tcx.getNumTrackpointsInTrack(0, 0, 0));
+            System.out.println("Track points: " + tcx.getNumTrackpointsInTrack(0, 0, 0));
             System.out.println(
                     tcx.getDatabase()
                             .getActivities().getActivity().get(0)

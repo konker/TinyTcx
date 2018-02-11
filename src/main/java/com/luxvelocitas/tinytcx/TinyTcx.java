@@ -430,7 +430,7 @@ public class TinyTcx {
         try {
             Marshaller marshaller = mJaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, AbstractTinyTcx.TCX_SCHEMA_LOCATION);
+            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, TCX_SCHEMA_LOCATION);
             marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
 
             /*[XXX: use package-info instead]
@@ -441,7 +441,7 @@ public class TinyTcx {
 
             JAXBElement<TrainingCenterDatabaseT> root =
                 new JAXBElement<TrainingCenterDatabaseT>(
-                    new QName(AbstractTinyTcx.TCX_NAMESPACE_URI, "TrainingCenterDatabase"),
+                    new QName(TCX_NAMESPACE_URI, "TrainingCenterDatabase"),
                     TrainingCenterDatabaseT.class,
                     mDatabase);
 
