@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<bindings
+    xmlns="http://java.sun.com/xml/ns/jaxb"
+    version="2.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc">
+    <globalBindings>
+        <xjc:javaType
+            name="java.time.ZonedDateTime"
+            xmlType="xs:date"
+            adapter="com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter"
+        />
+        <xjc:javaType
+            name="java.time.ZonedDateTime"
+            xmlType="xs:dateTime"
+            adapter="com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter"
+        />
+    </globalBindings>
+</bindings>

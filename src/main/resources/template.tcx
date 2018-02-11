@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrainingCenterDatabase
+    XSI_URI:schemaLocation="http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2 http://www.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd"
+    xmlns="http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2"
+    xmlns:XSI_URI="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ns2="http://www.garmin.com/xmlschemas/ActivityExtension/v2"
+    xmlns:ns3="http://www.garmin.com/xmlschemas/UserProfile/v2"
+    xmlns:ns4="http://www.garmin.com/xmlschemas/ProfileExtension/v1"
+    xmlns:ns5="http://www.garmin.com/xmlschemas/ActivityGoals/v1"
+    >
+    <Activities>
+        <Activity Sport="Other">
+            <Id>2018-02-08T18:35:21.000Z</Id>
+            <Lap StartTime="2018-02-08T18:35:21.000Z">
+                <TotalTimeSeconds>4890.0</TotalTimeSeconds>
+                <DistanceMeters>0.0</DistanceMeters>
+                <Calories>678</Calories>
+                <AverageHeartRateBpm>
+                    <Value>144</Value>
+                </AverageHeartRateBpm>
+                <MaximumHeartRateBpm>
+                    <Value>164</Value>
+                </MaximumHeartRateBpm>
+                <Intensity>Active</Intensity>
+                <TriggerMethod>Manual</TriggerMethod>
+                <Track>
+                    <!--
+                    <Trackpoint>
+                        <Time>2018-02-08T18:35:21.000Z</Time>
+                        <HeartRateBpm>
+                            <Value>98</Value>
+                        </HeartRateBpm>
+                        <Extensions>
+                            <ns2:TPX/>
+                        </Extensions>
+                    </Trackpoint>
+                    -->
+                </Track>
+                <Extensions>
+                    <ns2:LX/>
+                </Extensions>
+            </Lap>
+            <Creator XSI_URI:type="Device_t">
+                <Name>TinyTcx</Name>
+                <UnitId>1234567890</UnitId>
+                <ProductID>1234</ProductID>
+                <Version>
+                    <VersionMajor>0</VersionMajor>
+                    <VersionMinor>0</VersionMinor>
+                    <BuildMajor>0</BuildMajor>
+                    <BuildMinor>0</BuildMinor>
+                </Version>
+            </Creator>
+        </Activity>
+    </Activities>
+    <Author XSI_URI:type="Application_t">
+        <Name>TinyTcx</Name>
+        <Build>
+            <Version>
+                <VersionMajor>1</VersionMajor>
+                <VersionMinor>0</VersionMinor>
+                <BuildMajor>0</BuildMajor>
+                <BuildMinor>0</BuildMinor>
+            </Version>
+        </Build>
+        <LangID>en</LangID>
+        <PartNumber>001-K1234-00</PartNumber>
+    </Author>
+</TrainingCenterDatabase>
