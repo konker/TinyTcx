@@ -36,7 +36,7 @@ public class Main {
             System.out.println(tcx.getDatabase().getClass());
             System.out.println("Activities: " + tcx.getNumActivities());
             System.out.println("Laps: " + tcx.getNumLapsInActivity(0));
-            System.out.println("Tracks: " + tcx.getNumtracksInLap(0, 0));
+            System.out.println("Tracks: " + tcx.getNumTracksInLap(0, 0));
             System.out.println("Track points: " + tcx.getNumTrackpointsInTrack(0, 0, 0));
             System.out.println(
                     tcx.getDatabase()
