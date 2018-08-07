@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Cadence_t", propOrder = {
+@XmlType(name = "Cadence_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "low",
     "high"
 })
@@ -36,9 +36,9 @@ public class CadenceT
     extends TargetT
 {
 
-    @XmlElement(name = "Low")
+    @XmlElement(name = "Low", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double low;
-    @XmlElement(name = "High")
+    @XmlElement(name = "High", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double high;
 
     /**

@@ -38,7 +38,7 @@ import com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Trackpoint_t", propOrder = {
+@XmlType(name = "Trackpoint_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "time",
     "position",
     "altitudeMeters",
@@ -50,25 +50,25 @@ import com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter;
 })
 public class TrackpointT {
 
-    @XmlElement(name = "Time", required = true, type = String.class)
+    @XmlElement(name = "Time", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true, type = String.class)
     @XmlJavaTypeAdapter(ZonedDateTimeXmlAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected ZonedDateTime time;
-    @XmlElement(name = "Position")
+    @XmlElement(name = "Position", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected PositionT position;
-    @XmlElement(name = "AltitudeMeters")
+    @XmlElement(name = "AltitudeMeters", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected Double altitudeMeters;
-    @XmlElement(name = "DistanceMeters")
+    @XmlElement(name = "DistanceMeters", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected Double distanceMeters;
-    @XmlElement(name = "HeartRateBpm")
+    @XmlElement(name = "HeartRateBpm", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected HeartRateInBeatsPerMinuteT heartRateBpm;
-    @XmlElement(name = "Cadence")
+    @XmlElement(name = "Cadence", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedByte")
     protected Short cadence;
-    @XmlElement(name = "SensorState")
+    @XmlElement(name = "SensorState", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "token")
     protected SensorStateT sensorState;
-    @XmlElement(name = "Extensions")
+    @XmlElement(name = "Extensions", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected ExtensionsT extensions;
 
     /**

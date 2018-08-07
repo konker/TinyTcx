@@ -30,15 +30,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Training_t", propOrder = {
+@XmlType(name = "Training_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "quickWorkoutResults",
     "plan"
 })
 public class TrainingT {
 
-    @XmlElement(name = "QuickWorkoutResults")
+    @XmlElement(name = "QuickWorkoutResults", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected QuickWorkoutT quickWorkoutResults;
-    @XmlElement(name = "Plan")
+    @XmlElement(name = "Plan", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected PlanT plan;
     @XmlAttribute(name = "VirtualPartner", required = true)
     protected boolean virtualPartner;

@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CourseLap_t", propOrder = {
+@XmlType(name = "CourseLap_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "totalTimeSeconds",
     "distanceMeters",
     "beginPosition",
@@ -53,29 +53,29 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class CourseLapT {
 
-    @XmlElement(name = "TotalTimeSeconds")
+    @XmlElement(name = "TotalTimeSeconds", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double totalTimeSeconds;
-    @XmlElement(name = "DistanceMeters")
+    @XmlElement(name = "DistanceMeters", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double distanceMeters;
-    @XmlElement(name = "BeginPosition")
+    @XmlElement(name = "BeginPosition", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected PositionT beginPosition;
-    @XmlElement(name = "BeginAltitudeMeters")
+    @XmlElement(name = "BeginAltitudeMeters", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected Double beginAltitudeMeters;
-    @XmlElement(name = "EndPosition")
+    @XmlElement(name = "EndPosition", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected PositionT endPosition;
-    @XmlElement(name = "EndAltitudeMeters")
+    @XmlElement(name = "EndAltitudeMeters", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected Double endAltitudeMeters;
-    @XmlElement(name = "AverageHeartRateBpm")
+    @XmlElement(name = "AverageHeartRateBpm", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected HeartRateInBeatsPerMinuteT averageHeartRateBpm;
-    @XmlElement(name = "MaximumHeartRateBpm")
+    @XmlElement(name = "MaximumHeartRateBpm", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected HeartRateInBeatsPerMinuteT maximumHeartRateBpm;
-    @XmlElement(name = "Intensity", required = true)
+    @XmlElement(name = "Intensity", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlSchemaType(name = "token")
     protected IntensityT intensity;
-    @XmlElement(name = "Cadence")
+    @XmlElement(name = "Cadence", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedByte")
     protected Short cadence;
-    @XmlElement(name = "Extensions")
+    @XmlElement(name = "Extensions", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected ExtensionsT extensions;
 
     /**

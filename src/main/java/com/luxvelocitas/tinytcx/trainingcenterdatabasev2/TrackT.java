@@ -29,12 +29,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Track_t", propOrder = {
+@XmlType(name = "Track_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "trackpoint"
 })
 public class TrackT {
 
-    @XmlElement(name = "Trackpoint", required = true)
+    @XmlElement(name = "Trackpoint", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected List<TrackpointT> trackpoint;
 
     /**

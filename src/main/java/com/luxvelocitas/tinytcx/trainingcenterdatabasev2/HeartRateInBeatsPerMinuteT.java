@@ -28,14 +28,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "HeartRateInBeatsPerMinute_t", propOrder = {
+@XmlType(name = "HeartRateInBeatsPerMinute_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "value"
 })
 public class HeartRateInBeatsPerMinuteT
     extends HeartRateValueT
 {
 
-    @XmlElement(name = "Value")
+    @XmlElement(name = "Value", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedByte")
     protected short value;
 

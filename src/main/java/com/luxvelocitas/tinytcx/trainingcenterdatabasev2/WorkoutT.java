@@ -41,7 +41,7 @@ import com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Workout_t", propOrder = {
+@XmlType(name = "Workout_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "name",
     "step",
     "scheduledOn",
@@ -51,21 +51,21 @@ import com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter;
 })
 public class WorkoutT {
 
-    @XmlElement(name = "Name", required = true)
+    @XmlElement(name = "Name", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String name;
-    @XmlElement(name = "Step", required = true)
+    @XmlElement(name = "Step", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected List<AbstractStepT> step;
-    @XmlElement(name = "ScheduledOn", type = String.class)
+    @XmlElement(name = "ScheduledOn", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", type = String.class)
     @XmlJavaTypeAdapter(ZonedDateTimeXmlAdapter.class)
     @XmlSchemaType(name = "date")
     protected List<ZonedDateTime> scheduledOn;
-    @XmlElement(name = "Notes")
+    @XmlElement(name = "Notes", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected String notes;
-    @XmlElement(name = "Creator")
+    @XmlElement(name = "Creator", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected AbstractSourceT creator;
-    @XmlElement(name = "Extensions")
+    @XmlElement(name = "Extensions", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected ExtensionsT extensions;
     @XmlAttribute(name = "Sport", required = true)
     protected SportT sport;

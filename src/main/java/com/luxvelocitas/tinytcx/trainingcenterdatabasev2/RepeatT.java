@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Repeat_t", propOrder = {
+@XmlType(name = "Repeat_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "repetitions",
     "child"
 })
@@ -39,10 +39,10 @@ public class RepeatT
     extends AbstractStepT
 {
 
-    @XmlElement(name = "Repetitions")
+    @XmlElement(name = "Repetitions", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "positiveInteger")
     protected int repetitions;
-    @XmlElement(name = "Child", required = true)
+    @XmlElement(name = "Child", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected List<AbstractStepT> child;
 
     /**

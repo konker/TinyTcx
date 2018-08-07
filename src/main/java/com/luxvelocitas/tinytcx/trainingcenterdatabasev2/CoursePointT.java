@@ -38,7 +38,7 @@ import com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CoursePoint_t", propOrder = {
+@XmlType(name = "CoursePoint_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "name",
     "time",
     "position",
@@ -49,25 +49,25 @@ import com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter;
 })
 public class CoursePointT {
 
-    @XmlElement(name = "Name", required = true)
+    @XmlElement(name = "Name", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String name;
-    @XmlElement(name = "Time", required = true, type = String.class)
+    @XmlElement(name = "Time", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true, type = String.class)
     @XmlJavaTypeAdapter(ZonedDateTimeXmlAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected ZonedDateTime time;
-    @XmlElement(name = "Position", required = true)
+    @XmlElement(name = "Position", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected PositionT position;
-    @XmlElement(name = "AltitudeMeters")
+    @XmlElement(name = "AltitudeMeters", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected Double altitudeMeters;
-    @XmlElement(name = "PointType", required = true)
+    @XmlElement(name = "PointType", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String pointType;
-    @XmlElement(name = "Notes")
+    @XmlElement(name = "Notes", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected String notes;
-    @XmlElement(name = "Extensions")
+    @XmlElement(name = "Extensions", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected ExtensionsT extensions;
 
     /**

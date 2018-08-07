@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Device_t", propOrder = {
+@XmlType(name = "Device_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "unitId",
     "productID",
     "version"
@@ -43,13 +43,13 @@ public class DeviceT
     extends AbstractSourceT
 {
 
-    @XmlElement(name = "UnitId")
+    @XmlElement(name = "UnitId", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedInt")
     protected long unitId;
-    @XmlElement(name = "ProductID")
+    @XmlElement(name = "ProductID", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedShort")
     protected int productID;
-    @XmlElement(name = "Version", required = true)
+    @XmlElement(name = "Version", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected VersionT version;
 
     /**

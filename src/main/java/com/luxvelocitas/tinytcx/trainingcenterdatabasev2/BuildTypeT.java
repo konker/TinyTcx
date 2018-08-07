@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  * </pre>
  * 
  */
-@XmlType(name = "BuildType_t")
+@XmlType(name = "BuildType_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
 @XmlEnum
 public enum BuildTypeT {
 

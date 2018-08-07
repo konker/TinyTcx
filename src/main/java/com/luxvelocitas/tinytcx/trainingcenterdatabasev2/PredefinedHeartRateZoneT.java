@@ -28,14 +28,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PredefinedHeartRateZone_t", propOrder = {
+@XmlType(name = "PredefinedHeartRateZone_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "number"
 })
 public class PredefinedHeartRateZoneT
     extends ZoneT
 {
 
-    @XmlElement(name = "Number")
+    @XmlElement(name = "Number", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "positiveInteger")
     protected int number;
 

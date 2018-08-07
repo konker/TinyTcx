@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Build_t", propOrder = {
+@XmlType(name = "Build_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "version",
     "type",
     "time",
@@ -41,16 +41,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class BuildT {
 
-    @XmlElement(name = "Version", required = true)
+    @XmlElement(name = "Version", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected VersionT version;
-    @XmlElement(name = "Type")
+    @XmlElement(name = "Type", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "token")
     protected BuildTypeT type;
-    @XmlElement(name = "Time")
+    @XmlElement(name = "Time", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String time;
-    @XmlElement(name = "Builder")
+    @XmlElement(name = "Builder", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String builder;

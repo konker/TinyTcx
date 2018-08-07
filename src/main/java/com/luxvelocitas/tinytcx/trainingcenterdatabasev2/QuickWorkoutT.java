@@ -28,15 +28,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "QuickWorkout_t", propOrder = {
+@XmlType(name = "QuickWorkout_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "totalTimeSeconds",
     "distanceMeters"
 })
 public class QuickWorkoutT {
 
-    @XmlElement(name = "TotalTimeSeconds")
+    @XmlElement(name = "TotalTimeSeconds", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double totalTimeSeconds;
-    @XmlElement(name = "DistanceMeters")
+    @XmlElement(name = "DistanceMeters", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double distanceMeters;
 
     /**

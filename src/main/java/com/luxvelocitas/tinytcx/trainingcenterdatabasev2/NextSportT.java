@@ -28,15 +28,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NextSport_t", propOrder = {
+@XmlType(name = "NextSport_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "transition",
     "activity"
 })
 public class NextSportT {
 
-    @XmlElement(name = "Transition")
+    @XmlElement(name = "Transition", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected ActivityLapT transition;
-    @XmlElement(name = "Activity", required = true)
+    @XmlElement(name = "Activity", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected ActivityT activity;
 
     /**

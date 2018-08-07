@@ -29,12 +29,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CourseList_t", propOrder = {
+@XmlType(name = "CourseList_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "course"
 })
 public class CourseListT {
 
-    @XmlElement(name = "Course")
+    @XmlElement(name = "Course", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected List<CourseT> course;
 
     /**

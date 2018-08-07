@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Zone_t")
+@XmlType(name = "Zone_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
 @XmlSeeAlso({
     CustomHeartRateZoneT.class,
     PredefinedSpeedZoneT.class,

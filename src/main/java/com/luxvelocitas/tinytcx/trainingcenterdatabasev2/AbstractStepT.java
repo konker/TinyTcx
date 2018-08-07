@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AbstractStep_t", propOrder = {
+@XmlType(name = "AbstractStep_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "stepId"
 })
 @XmlSeeAlso({
@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public abstract class AbstractStepT {
 
-    @XmlElement(name = "StepId")
+    @XmlElement(name = "StepId", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "positiveInteger")
     protected int stepId;
 

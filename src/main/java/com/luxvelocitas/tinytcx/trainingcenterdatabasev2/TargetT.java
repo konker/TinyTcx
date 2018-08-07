@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Target_t")
+@XmlType(name = "Target_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
 @XmlSeeAlso({
     NoneT.class,
     HeartRateT.class,

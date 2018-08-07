@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomSpeedZone_t", propOrder = {
+@XmlType(name = "CustomSpeedZone_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "viewAs",
     "lowInMetersPerSecond",
     "highInMetersPerSecond"
@@ -39,12 +39,12 @@ public class CustomSpeedZoneT
     extends ZoneT
 {
 
-    @XmlElement(name = "ViewAs", required = true)
+    @XmlElement(name = "ViewAs", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlSchemaType(name = "token")
     protected SpeedTypeT viewAs;
-    @XmlElement(name = "LowInMetersPerSecond")
+    @XmlElement(name = "LowInMetersPerSecond", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double lowInMetersPerSecond;
-    @XmlElement(name = "HighInMetersPerSecond")
+    @XmlElement(name = "HighInMetersPerSecond", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double highInMetersPerSecond;
 
     /**

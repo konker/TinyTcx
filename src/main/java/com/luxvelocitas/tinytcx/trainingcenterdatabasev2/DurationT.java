@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Duration_t")
+@XmlType(name = "Duration_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
 @XmlSeeAlso({
     DistanceT.class,
     UserInitiatedT.class,

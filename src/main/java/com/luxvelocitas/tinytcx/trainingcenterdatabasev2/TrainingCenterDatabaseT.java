@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TrainingCenterDatabase_t", propOrder = {
+@XmlType(name = "TrainingCenterDatabase_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "folders",
     "activities",
     "workouts",
@@ -42,17 +42,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class TrainingCenterDatabaseT {
 
-    @XmlElement(name = "Folders")
+    @XmlElement(name = "Folders", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected FoldersT folders;
-    @XmlElement(name = "Activities")
+    @XmlElement(name = "Activities", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected ActivityListT activities;
-    @XmlElement(name = "Workouts")
+    @XmlElement(name = "Workouts", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected WorkoutListT workouts;
-    @XmlElement(name = "Courses")
+    @XmlElement(name = "Courses", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected CourseListT courses;
-    @XmlElement(name = "Author")
+    @XmlElement(name = "Author", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected AbstractSourceT author;
-    @XmlElement(name = "Extensions")
+    @XmlElement(name = "Extensions", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected ExtensionsT extensions;
 
     /**

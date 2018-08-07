@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AbstractSource_t", propOrder = {
+@XmlType(name = "AbstractSource_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "name"
 })
 @XmlSeeAlso({
@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public abstract class AbstractSourceT {
 
-    @XmlElement(name = "Name", required = true)
+    @XmlElement(name = "Name", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String name;

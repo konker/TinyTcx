@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "HeartRateValue_t")
+@XmlType(name = "HeartRateValue_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
 @XmlSeeAlso({
     HeartRateAsPercentOfMaxT.class,
     HeartRateInBeatsPerMinuteT.class

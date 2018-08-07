@@ -28,15 +28,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Position_t", propOrder = {
+@XmlType(name = "Position_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "latitudeDegrees",
     "longitudeDegrees"
 })
 public class PositionT {
 
-    @XmlElement(name = "LatitudeDegrees")
+    @XmlElement(name = "LatitudeDegrees", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double latitudeDegrees;
-    @XmlElement(name = "LongitudeDegrees")
+    @XmlElement(name = "LongitudeDegrees", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double longitudeDegrees;
 
     /**

@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Step_t", propOrder = {
+@XmlType(name = "Step_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "name",
     "duration",
     "intensity",
@@ -43,16 +43,16 @@ public class StepT
     extends AbstractStepT
 {
 
-    @XmlElement(name = "Name")
+    @XmlElement(name = "Name", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String name;
-    @XmlElement(name = "Duration", required = true)
+    @XmlElement(name = "Duration", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected DurationT duration;
-    @XmlElement(name = "Intensity", required = true)
+    @XmlElement(name = "Intensity", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlSchemaType(name = "token")
     protected IntensityT intensity;
-    @XmlElement(name = "Target", required = true)
+    @XmlElement(name = "Target", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected TargetT target;
 
     /**

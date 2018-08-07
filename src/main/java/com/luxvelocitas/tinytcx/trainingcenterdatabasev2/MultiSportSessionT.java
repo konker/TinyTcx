@@ -36,7 +36,7 @@ import com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "MultiSportSession_t", propOrder = {
+@XmlType(name = "MultiSportSession_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "id",
     "firstSport",
     "nextSport",
@@ -44,15 +44,15 @@ import com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter;
 })
 public class MultiSportSessionT {
 
-    @XmlElement(name = "Id", required = true, type = String.class)
+    @XmlElement(name = "Id", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true, type = String.class)
     @XmlJavaTypeAdapter(ZonedDateTimeXmlAdapter.class)
     @XmlSchemaType(name = "dateTime")
     protected ZonedDateTime id;
-    @XmlElement(name = "FirstSport", required = true)
+    @XmlElement(name = "FirstSport", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected FirstSportT firstSport;
-    @XmlElement(name = "NextSport")
+    @XmlElement(name = "NextSport", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected List<NextSportT> nextSport;
-    @XmlElement(name = "Notes")
+    @XmlElement(name = "Notes", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected String notes;
 
     /**

@@ -28,14 +28,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Distance_t", propOrder = {
+@XmlType(name = "Distance_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "meters"
 })
 public class DistanceT
     extends DurationT
 {
 
-    @XmlElement(name = "Meters")
+    @XmlElement(name = "Meters", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedShort")
     protected int meters;
 

@@ -28,14 +28,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CaloriesBurned_t", propOrder = {
+@XmlType(name = "CaloriesBurned_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "calories"
 })
 public class CaloriesBurnedT
     extends DurationT
 {
 
-    @XmlElement(name = "Calories")
+    @XmlElement(name = "Calories", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedShort")
     protected int calories;
 

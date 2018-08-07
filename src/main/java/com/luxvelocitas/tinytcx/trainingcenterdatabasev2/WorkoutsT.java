@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Workouts_t", propOrder = {
+@XmlType(name = "Workouts_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "running",
     "biking",
     "other",
@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class WorkoutsT {
 
-    @XmlElement(name = "Running", required = true)
+    @XmlElement(name = "Running", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected WorkoutFolderT running;
-    @XmlElement(name = "Biking", required = true)
+    @XmlElement(name = "Biking", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected WorkoutFolderT biking;
-    @XmlElement(name = "Other", required = true)
+    @XmlElement(name = "Other", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected WorkoutFolderT other;
-    @XmlElement(name = "Extensions")
+    @XmlElement(name = "Extensions", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected ExtensionsT extensions;
 
     /**

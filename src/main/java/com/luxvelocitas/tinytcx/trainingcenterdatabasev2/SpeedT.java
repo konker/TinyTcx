@@ -27,14 +27,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Speed_t", propOrder = {
+@XmlType(name = "Speed_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "speedZone"
 })
 public class SpeedT
     extends TargetT
 {
 
-    @XmlElement(name = "SpeedZone", required = true)
+    @XmlElement(name = "SpeedZone", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected ZoneT speedZone;
 
     /**

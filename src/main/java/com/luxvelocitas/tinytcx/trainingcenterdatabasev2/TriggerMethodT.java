@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  * </pre>
  * 
  */
-@XmlType(name = "TriggerMethod_t")
+@XmlType(name = "TriggerMethod_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
 @XmlEnum
 public enum TriggerMethodT {
 

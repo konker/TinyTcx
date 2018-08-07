@@ -33,12 +33,12 @@ import com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Week_t", propOrder = {
+@XmlType(name = "Week_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "notes"
 })
 public class WeekT {
 
-    @XmlElement(name = "Notes")
+    @XmlElement(name = "Notes", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected String notes;
     @XmlAttribute(name = "StartDay", required = true)
     @XmlJavaTypeAdapter(ZonedDateTimeXmlAdapter.class)

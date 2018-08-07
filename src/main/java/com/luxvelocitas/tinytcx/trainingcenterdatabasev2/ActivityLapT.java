@@ -46,7 +46,7 @@ import com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ActivityLap_t", propOrder = {
+@XmlType(name = "ActivityLap_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "totalTimeSeconds",
     "distanceMeters",
     "maximumSpeed",
@@ -62,33 +62,33 @@ import com.luxvelocitas.tinytcx.util.ZonedDateTimeXmlAdapter;
 })
 public class ActivityLapT {
 
-    @XmlElement(name = "TotalTimeSeconds")
+    @XmlElement(name = "TotalTimeSeconds", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double totalTimeSeconds;
-    @XmlElement(name = "DistanceMeters")
+    @XmlElement(name = "DistanceMeters", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected double distanceMeters;
-    @XmlElement(name = "MaximumSpeed")
+    @XmlElement(name = "MaximumSpeed", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected Double maximumSpeed;
-    @XmlElement(name = "Calories")
+    @XmlElement(name = "Calories", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedShort")
     protected int calories;
-    @XmlElement(name = "AverageHeartRateBpm")
+    @XmlElement(name = "AverageHeartRateBpm", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected HeartRateInBeatsPerMinuteT averageHeartRateBpm;
-    @XmlElement(name = "MaximumHeartRateBpm")
+    @XmlElement(name = "MaximumHeartRateBpm", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected HeartRateInBeatsPerMinuteT maximumHeartRateBpm;
-    @XmlElement(name = "Intensity", required = true)
+    @XmlElement(name = "Intensity", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlSchemaType(name = "token")
     protected IntensityT intensity;
-    @XmlElement(name = "Cadence")
+    @XmlElement(name = "Cadence", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedByte")
     protected Short cadence;
-    @XmlElement(name = "TriggerMethod", required = true)
+    @XmlElement(name = "TriggerMethod", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlSchemaType(name = "token")
     protected TriggerMethodT triggerMethod;
-    @XmlElement(name = "Track")
+    @XmlElement(name = "Track", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected List<TrackT> track;
-    @XmlElement(name = "Notes")
+    @XmlElement(name = "Notes", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected String notes;
-    @XmlElement(name = "Extensions")
+    @XmlElement(name = "Extensions", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected ExtensionsT extensions;
     @XmlAttribute(name = "StartTime", required = true)
     @XmlJavaTypeAdapter(ZonedDateTimeXmlAdapter.class)

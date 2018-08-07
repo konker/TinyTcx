@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Course_t", propOrder = {
+@XmlType(name = "Course_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "name",
     "lap",
     "track",
@@ -49,21 +49,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class CourseT {
 
-    @XmlElement(name = "Name", required = true)
+    @XmlElement(name = "Name", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String name;
-    @XmlElement(name = "Lap")
+    @XmlElement(name = "Lap", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected List<CourseLapT> lap;
-    @XmlElement(name = "Track")
+    @XmlElement(name = "Track", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected List<TrackT> track;
-    @XmlElement(name = "Notes")
+    @XmlElement(name = "Notes", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected String notes;
-    @XmlElement(name = "CoursePoint")
+    @XmlElement(name = "CoursePoint", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected List<CoursePointT> coursePoint;
-    @XmlElement(name = "Creator")
+    @XmlElement(name = "Creator", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected AbstractSourceT creator;
-    @XmlElement(name = "Extensions")
+    @XmlElement(name = "Extensions", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected ExtensionsT extensions;
 
     /**

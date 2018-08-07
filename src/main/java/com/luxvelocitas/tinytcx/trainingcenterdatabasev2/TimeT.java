@@ -28,14 +28,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Time_t", propOrder = {
+@XmlType(name = "Time_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "seconds"
 })
 public class TimeT
     extends DurationT
 {
 
-    @XmlElement(name = "Seconds")
+    @XmlElement(name = "Seconds", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedShort")
     protected int seconds;
 

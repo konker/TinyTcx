@@ -29,18 +29,18 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Folders_t", propOrder = {
+@XmlType(name = "Folders_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "history",
     "workouts",
     "courses"
 })
 public class FoldersT {
 
-    @XmlElement(name = "History")
+    @XmlElement(name = "History", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected HistoryT history;
-    @XmlElement(name = "Workouts")
+    @XmlElement(name = "Workouts", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected WorkoutsT workouts;
-    @XmlElement(name = "Courses")
+    @XmlElement(name = "Courses", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected CoursesT courses;
 
     /**

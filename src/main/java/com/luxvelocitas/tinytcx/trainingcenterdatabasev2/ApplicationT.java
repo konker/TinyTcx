@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Application_t", propOrder = {
+@XmlType(name = "Application_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "build",
     "langID",
     "partNumber"
@@ -43,13 +43,13 @@ public class ApplicationT
     extends AbstractSourceT
 {
 
-    @XmlElement(name = "Build", required = true)
+    @XmlElement(name = "Build", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected BuildT build;
-    @XmlElement(name = "LangID", required = true)
+    @XmlElement(name = "LangID", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String langID;
-    @XmlElement(name = "PartNumber", required = true)
+    @XmlElement(name = "PartNumber", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String partNumber;

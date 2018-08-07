@@ -33,18 +33,18 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "WorkoutFolder_t", propOrder = {
+@XmlType(name = "WorkoutFolder_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "folder",
     "workoutNameRef",
     "extensions"
 })
 public class WorkoutFolderT {
 
-    @XmlElement(name = "Folder")
+    @XmlElement(name = "Folder", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected List<WorkoutFolderT> folder;
-    @XmlElement(name = "WorkoutNameRef")
+    @XmlElement(name = "WorkoutNameRef", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected List<NameKeyReferenceT> workoutNameRef;
-    @XmlElement(name = "Extensions")
+    @XmlElement(name = "Extensions", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     protected ExtensionsT extensions;
     @XmlAttribute(name = "Name", required = true)
     protected String name;

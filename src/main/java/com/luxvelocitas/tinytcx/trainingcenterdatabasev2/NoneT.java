@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "None_t")
+@XmlType(name = "None_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
 public class NoneT
     extends TargetT
 {

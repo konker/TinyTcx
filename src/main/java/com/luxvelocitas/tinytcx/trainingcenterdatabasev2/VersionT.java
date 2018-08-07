@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Version_t", propOrder = {
+@XmlType(name = "Version_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "versionMajor",
     "versionMinor",
     "buildMajor",
@@ -39,16 +39,16 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class VersionT {
 
-    @XmlElement(name = "VersionMajor")
+    @XmlElement(name = "VersionMajor", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedShort")
     protected int versionMajor;
-    @XmlElement(name = "VersionMinor")
+    @XmlElement(name = "VersionMinor", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedShort")
     protected int versionMinor;
-    @XmlElement(name = "BuildMajor")
+    @XmlElement(name = "BuildMajor", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedShort")
     protected Integer buildMajor;
-    @XmlElement(name = "BuildMinor")
+    @XmlElement(name = "BuildMinor", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2")
     @XmlSchemaType(name = "unsignedShort")
     protected Integer buildMinor;
 

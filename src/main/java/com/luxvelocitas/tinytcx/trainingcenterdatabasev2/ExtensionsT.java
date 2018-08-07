@@ -30,7 +30,7 @@ import org.w3c.dom.Element;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Extensions_t", propOrder = {
+@XmlType(name = "Extensions_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "any"
 })
 public class ExtensionsT {

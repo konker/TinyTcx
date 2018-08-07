@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CustomHeartRateZone_t", propOrder = {
+@XmlType(name = "CustomHeartRateZone_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "low",
     "high"
 })
@@ -36,9 +36,9 @@ public class CustomHeartRateZoneT
     extends ZoneT
 {
 
-    @XmlElement(name = "Low", required = true)
+    @XmlElement(name = "Low", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected HeartRateValueT low;
-    @XmlElement(name = "High", required = true)
+    @XmlElement(name = "High", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected HeartRateValueT high;
 
     /**

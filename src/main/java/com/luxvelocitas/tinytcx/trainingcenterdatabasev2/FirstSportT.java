@@ -27,12 +27,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FirstSport_t", propOrder = {
+@XmlType(name = "FirstSport_t", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", propOrder = {
     "activity"
 })
 public class FirstSportT {
 
-    @XmlElement(name = "Activity", required = true)
+    @XmlElement(name = "Activity", namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2", required = true)
     protected ActivityT activity;
 
     /**
