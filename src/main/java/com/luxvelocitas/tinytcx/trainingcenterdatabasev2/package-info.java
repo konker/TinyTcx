@@ -1,6 +1,6 @@
 @javax.xml.bind.annotation.XmlSchema(
         namespace = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2",
-        xmlns={@XmlNs(prefix="tcx",
+        xmlns={@XmlNs(prefix="",
                 namespaceURI="http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2"),
                 @XmlNs(prefix="ns2",
                         namespaceURI="http://www.garmin.com/xmlschemas/ActivityExtension/v2"),
