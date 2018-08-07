@@ -12,8 +12,7 @@ import java.time.ZonedDateTime;
 public class Main {
     public static void main(String[] argv) {
         try {
-            TinyTcx tcx = new TinyTcx();
-            tcx.init();
+            TinyTcx tcx = new TinyTcx().init();
 
             TrackpointT trackpoint1 = new TrackpointT();
             trackpoint1.setTime(ZonedDateTime.now());

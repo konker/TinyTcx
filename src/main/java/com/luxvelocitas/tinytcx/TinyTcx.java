@@ -7,15 +7,16 @@ import javax.xml.namespace.QName;
 import javax.xml.transform.stream.StreamSource;
 import java.io.*;
 import java.time.ZonedDateTime;
-import java.util.Objects;
 
 
 @SuppressWarnings({"unused", "WeakerAccess", "UnusedReturnValue"})
 public class TinyTcx {
     private static final String TCX_PACKAGE = "com.luxvelocitas.tinytcx.trainingcenterdatabasev2";
-    private static final String TCX_NAMESPACE_URI = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2";
+    public static final String TCX_NAMESPACE_URI = "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2";
     private static final String TCX_SCHEMA_LOCATION =
         "http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2 http://www.garmin.com/xmlschemas/TrainingCenterDatabasev2.xsd";
+
+    private static final String TEMPLATE_RESOURCE_FILENAME = "template.tcx";
 
     private TrainingCenterDatabaseT mDatabase;
     private JAXBContext mJaxbContext;
@@ -390,15 +391,14 @@ public class TinyTcx {
      * @throws IOException - If there was a problem reading the database template
      */
     public TinyTcx init() throws IOException {
-        ClassLoader classLoader = getClass().getClassLoader();
-
         // Get a File for the template from resources
-        File file = new File(
-            Objects.requireNonNull(
-                classLoader.getResource("template.tcx")).getFile());
+        InputStream is =
+            getClass()
+            .getClassLoader()
+            .getResourceAsStream(TEMPLATE_RESOURCE_FILENAME);
 
         // Load the template file as the TrainingCenterDatabase
-        load(new FileInputStream(file));
+        load(is);
 
         // Make sure all times are set to "now"
         this.getActivity(0).setId(ZonedDateTime.now());
@@ -406,6 +406,7 @@ public class TinyTcx {
 
         return this;
     }
+
     /**
      * Load the TrainingCenterDatabase from the given input stream
      *
