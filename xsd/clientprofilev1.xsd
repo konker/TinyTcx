@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="http://www.garmin.com/xmlschemas/ClientProfile/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.garmin.com/xmlschemas/ClientProfile/v1" xmlns:nlf1="http://www.garmin.com/xmlschemas/ClientProfile/v1"
+	elementFormDefault="qualified">
+  <xsd:element name="ClientProfile" type="ClientProfile_t"/>
+
+  <xsd:complexType name="ClientProfile_t">
+			<xsd:sequence>
+				<xsd:element name="FirstName" type="NameType_t"/>
+				<xsd:element name="LastName" type="NameType_t"/>
+				<xsd:element name="Sex" type="SexType_t"/>
+        <xsd:element name="DOB" type="xsd:date"/>
+        <xsd:element name="WeightKg" type="xsd:decimal"/>
+        <xsd:element name="Assessment" type="AssessmentData_t" minOccurs="1" maxOccurs="3"/>
+      </xsd:sequence>
+      <xsd:attribute name="Version" type="xsd:unsignedInt"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="AssessmentData_t">
+      <xsd:sequence>
+        <xsd:element name="Date" type="xsd:dateTime"/>
+        <xsd:element name="Type" type="AssessmentType_t"/>
+        <xsd:element name="HRZones" type="HRZoneData_t"/>
+        <xsd:element name="CalorieBurnData" type="BurnData_t" minOccurs="21" maxOccurs="21"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+  <xsd:complexType name="HRZoneData_t">
+    <xsd:sequence>
+      <xsd:element name="Zone1Lo" type="xsd:nonNegativeInteger"/>
+      <xsd:element name="Zone1Hi" type="xsd:nonNegativeInteger"/>
+      <xsd:element name="Zone2Lo" type="xsd:nonNegativeInteger"/>
+      <xsd:element name="Zone2Hi" type="xsd:nonNegativeInteger"/>
+      <xsd:element name="Zone3Lo" type="xsd:nonNegativeInteger"/>
+      <xsd:element name="Zone3Hi" type="xsd:nonNegativeInteger"/>
+      <xsd:element name="Zone4Lo" type="xsd:nonNegativeInteger"/>
+      <xsd:element name="Zone4Hi" type="xsd:nonNegativeInteger"/>
+      <xsd:element name="Zone5Lo" type="xsd:nonNegativeInteger"/>
+      <xsd:element name="Zone5Hi" type="xsd:nonNegativeInteger"/>
+	  </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="BurnData_t">
+	  <xsd:sequence>
+	    <xsd:element name="LoHR" type="xsd:nonNegativeInteger"/>
+	    <xsd:element name="HiHR" type="xsd:nonNegativeInteger"/>
+	    <xsd:element name="FatKCalMin" type="xsd:decimal"/>
+	    <xsd:element name="TotalKCalMin" type="xsd:decimal"/>
+	  </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="AssessmentType_t">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Bike"/>
+      <xsd:enumeration value="Treadmill"/>
+      <xsd:enumeration value="Other"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="SexType_t">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Male"/>
+      <xsd:enumeration value="Female"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="NameType_t">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="30"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>

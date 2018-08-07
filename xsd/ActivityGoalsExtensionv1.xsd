@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="http://www.garmin.com/xmlschemas/ActivityGoals/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.garmin.com/xmlschemas/ActivityGoals/v1" xmlns:ag1="http://www.garmin.com/xmlschemas/ActivityGoals/v1"
+	elementFormDefault="qualified">
+
+    <xsd:element name="ActivityGoals" type="ActivityGoals_t"/>
+  
+    <xsd:simpleType name="Token_t">
+      <xsd:annotation>
+        <xsd:documentation>
+          Token must be defined as a type because of a bug in the MSXML parser which
+          does not correctly process xsd:token using the whiteSpace value of "collapse"
+        </xsd:documentation>
+      </xsd:annotation>
+      <xsd:restriction base="xsd:token">
+        <xsd:whiteSpace value="collapse"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  
+    <xsd:simpleType name="Sport_t">
+      <xsd:restriction base="Token_t">
+        <xsd:enumeration value="Running"/>
+        <xsd:enumeration value="Biking"/>
+        <xsd:enumeration value="Other"/>
+        <xsd:enumeration value="All"/>
+	    </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Measure_t">
+      <xsd:restriction base="Token_t">
+        <xsd:enumeration value="DistanceMeters"/>
+        <xsd:enumeration value="TimeSeconds"/>
+        <xsd:enumeration value="NumberOfSessions"/>
+        <xsd:enumeration value="Calories"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="RecurrenceCode_t">
+      <xsd:restriction base="Token_t">
+        <xsd:enumeration value="Once"/>
+        <xsd:enumeration value="Daily"/>
+        <xsd:enumeration value="Weekly"/>
+        <xsd:enumeration value="Monthly"/>
+        <xsd:enumeration value="Yearly"/>
+	      <xsd:enumeration value="Custom"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DaysCount_t">
+      <xsd:restriction base="xsd:unsignedShort">
+        <xsd:minInclusive value="1"/>
+        <xsd:maxInclusive value="365"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Period_t">
+      <xsd:sequence>
+        <xsd:element name="StartDateTime" type="xsd:dateTime" />
+        <xsd:element name="EndDateTime" type="xsd:dateTime" minOccurs="0" />
+      </xsd:sequence>
+      <xsd:attribute name="Recurrence" type="RecurrenceCode_t" use="required" />
+      <xsd:attribute name="DaysPerPeriod" type="DaysCount_t" use="optional" default="7" />
+    </xsd:complexType>
+
+    <xsd:complexType name="ActivityGoal_t">
+      <xsd:sequence>
+         <xsd:element name="Name" type="xsd:string">
+           <xsd:annotation>
+             <xsd:documentation>Goal name will be truncated to 11 characters on Forerunner 405</xsd:documentation>
+           </xsd:annotation>
+         </xsd:element>
+         <xsd:element name="Period" type="Period_t"/>
+    	 <xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+      </xsd:sequence>
+      <xsd:attribute name="Sport" type="Sport_t" use="required"/>
+      <xsd:attribute name="Measure" type="Measure_t" use="required"/>
+      <xsd:attribute name="Target" type="xsd:float" use="required"/>
+      <xsd:attribute name="Current" type="xsd:float" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="ActivityGoals_t">
+      <xsd:sequence>
+        <xsd:element name="ActivityGoal" type="ActivityGoal_t" minOccurs="0" maxOccurs="unbounded"/>
+         <xsd:element name="Extensions" type="Extensions_t" minOccurs="0">
+           <xsd:annotation>
+             <xsd:documentation>You can extend Training Center by adding your own elements from another schema here.</xsd:documentation>
+             </xsd:annotation>
+           </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Extensions_t">
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded">
+          <xsd:annotation>
+            <xsd:documentation>You can extend Training Center by adding your own elements from another schema here.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:any>
+       </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

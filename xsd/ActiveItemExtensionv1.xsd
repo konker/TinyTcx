@@ -1,0 +1,57 @@
+`<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://www.garmin.com/xmlschemas/ActiveItemExtensions/v1" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.garmin.com/xmlschemas/ActiveItemExtensions/v1" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="unqualified">
+
+	<xsd:element name="ActiveItemExtension" type="ActiveItemExtension_t" />
+
+	<xsd:complexType name="ActiveItemExtension_t">
+		<xsd:annotation>
+			<xsd:documentation>Extension to the Garmin Device schema</xsd:documentation>
+		</xsd:annotation>
+  		<xsd:sequence>
+			<xsd:element name="ActiveItem" type="ActiveItem_t" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ActiveItem_t">
+		<xsd:sequence>
+			<xsd:element name="Name" type="NonZeroToken_t"/>
+			<xsd:element name="Location" type="Location_t" maxOccurs="unbounded"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="NonZeroToken_t">
+		<xsd:restriction base="xsd:token">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="Location_t">
+		<xsd:sequence>
+			<xsd:element name="Path" type="xsd:anyURI" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>If a Path is not specified, the file can be at any path on the device.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BaseName" type="xsd:token" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>If a BaseName is not specified, the file can have any name. BaseName supports the * Wildcard. * matches zero or more characters.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FileExtension" type="xsd:token"/>
+			<xsd:element name="Extensions" type="Extensions_t" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Extensions_t">
+		<xsd:annotation>
+			<xsd:documentation>This type provides the ability to extend any data type that includes it.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
