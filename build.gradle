@@ -1,11 +1,24 @@
 group 'com.luxvelocitas.tinytcx'
-version '1.0-SNAPSHOT'
+version '1.0'
 
-apply plugin: 'java'
+apply plugin: 'java-library'
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
 
 sourceCompatibility = 1.8
 
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar) {
+    from javadoc
+    classifier = 'javadoc'
+}
+
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
@@ -23,5 +36,55 @@ test {
 
     reports {
         html.enabled = true
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'TinyTcx'
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+            pom {
+                name = 'TinyTcx'
+                description = 'Small library to read and write Garmin TCX files'
+                url = 'http://www.example.com/library'
+                licenses {
+                    license {
+                        name = 'ISC'
+                        url = 'https://opensource.org/licenses/isc-license'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'konker'
+                        name = 'Konrad Markus'
+                        email = 'konker@iki.fi'
+                    }
+                }
+                scm {
+                    url = 'http://github.com/konker/TinyTcx'
+                }
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html4', true)
+    }
+}
+
+if (JavaVersion.current().isJava8Compatible()) {
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+        }
     }
 }
